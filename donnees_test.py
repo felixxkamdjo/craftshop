@@ -7,11 +7,11 @@ DB_FILE = "projet.db"
 random.seed(42)
 
 CATEGORIES = [
-    ("Sculptures", "Masques et statues traditionnels en bois noble."),
-    ("Vannerie", "Paniers, corbeilles et sacs tressés en raphia."),
-    ("Textiles & Tissus", "Tissus Ndop, pagnes tissés et tentures traditionnelles."),
-    ("Bijouterie artisanale", "Colliers, perles royales et bracelets en bronze."),
-    ("Poterie & Céramique", "Vases, cruches et objets décoratifs en terre cuite."),
+    ("Sculptures", "Masques et statues traditionnels en bois noble.", "sculpture.svg"),
+    ("Vannerie", "Paniers, corbeilles et sacs tressés en raphia.", "vannerie.svg"),
+    ("Textiles & Tissus", "Tissus Ndop, pagnes tissés et tentures traditionnelles.", "textile.svg"),
+    ("Bijouterie artisanale", "Colliers, perles royales et bracelets en bronze.", "bijou.svg"),
+    ("Poterie & Céramique", "Vases, cruches et objets décoratifs en terre cuite.", "poterie.svg"),
 ]
 
 ARTISANS = [
@@ -44,20 +44,20 @@ def init_db():
     )
 
     cat_ids = []
-    for nom, desc in CATEGORIES:
+    for nom, desc, _ in CATEGORIES:
         cur = conn.execute("INSERT INTO categories (nom, description) VALUES (?, ?)", (nom, desc))
         cat_ids.append(cur.lastrowid)
 
     produits_crees = []
-    for c_id in cat_ids:
-        cat_nom = CATEGORIES[c_id - 1][0]
+    for idx, c_id in enumerate(cat_ids):
+        cat_nom, _, img_fichier = CATEGORIES[idx]
         for i in range(1, 9):
             p_nom = f"{cat_nom[:-1]} - Modèle {i:02d}"
             desc = "Pièce artisanale authentique faite main. Finition soignée."
             prix = random.randint(3500, 45000)
             stock = random.randint(2, 25)
             artisan = random.choice(ARTISANS)
-            image = "placeholder.svg"
+            image = img_fichier
             cur = conn.execute(
                 """INSERT INTO produits (categorie_id, nom, description, prix, stock, image, artisan, actif)
                    VALUES (?, ?, ?, ?, ?, ?, ?, 1)""",
@@ -106,7 +106,7 @@ def init_db():
 
     conn.commit()
     conn.close()
-    print("Base projet.db initialisée.")
+    print("Base projet.db initialisée avec les images réelles.")
 
 if __name__ == "__main__":
     init_db()

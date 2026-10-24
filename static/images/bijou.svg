@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#FAF5FF"/>
+  <!-- Collier et Perles Royales Bronze -->
+  <ellipse cx="200" cy="140" rx="65" ry="50" fill="none" stroke="#CA8A04" stroke-width="12"/>
+  <circle cx="200" cy="195" r="16" fill="#A16207"/>
+  <circle cx="165" cy="180" r="12" fill="#CA8A04"/>
+  <circle cx="235" cy="180" r="12" fill="#CA8A04"/>
+  <text x="200" y="275" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#7E22CE" text-anchor="middle">Bijoux & Bronze Royal</text>
+</svg>
