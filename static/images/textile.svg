@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#EFF6FF"/>
+  <!-- Tissu Ndop Traditionnel -->
+  <rect x="110" y="60" width="180" height="180" rx="12" fill="#1E3A8A"/>
+  <circle cx="200" cy="150" r="45" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  <rect x="175" y="125" width="50" height="50" fill="none" stroke="#93C5FD" stroke-width="4"/>
+  <line x1="110" y1="60" x2="290" y2="240" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="290" y1="60" x2="110" y2="240" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="200" y="275" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1E40AF" text-anchor="middle">Textile & Tissu Ndop</text>
+</svg>
